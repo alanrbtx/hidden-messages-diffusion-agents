@@ -1,0 +1,77 @@
+[build-system]
+requires = ["hatchling==1.27.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "hidden-messages"
+version = "0.1.0"
+description = "Diffusion-native hidden-state communication for independent language-model agents"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "accelerate==1.11.0",
+  "datasets==4.2.0",
+  "huggingface-hub==0.36.2",
+  "lm-eval==0.4.9.1",
+  "matplotlib==3.10.6",
+  "numpy==2.2.6",
+  "omegaconf==2.3.0",
+  "peft==0.17.1",
+  "pydantic==2.11.7",
+  "pyyaml==6.0.2",
+  "rich==14.1.0",
+  "sentencepiece==0.2.0",
+  "torch==2.12.0",
+  "torchmetrics==1.8.2",
+  "tqdm==4.67.1",
+  "transformers==4.57.0",
+  "trl==0.24.0",
+  "tyro==0.9.35",
+  "wandb==0.22.2",
+  "zstandard==0.25.0",
+]
+
+[tool.uv.sources]
+lm-eval = { path = "third_party/dllm/lm-evaluation-harness" }
+
+[project.optional-dependencies]
+dev = [
+  "mypy==1.17.1",
+  "pre-commit==4.3.0",
+  "pytest==8.4.1",
+  "pytest-cov==6.2.1",
+  "ruff==0.12.9",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/hidden_messages"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+exclude = ["third_party"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "RUF"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**/*.py" = ["S101"]
+
+[tool.mypy]
+python_version = "3.11"
+files = ["src/hidden_messages", "scripts"]
+exclude = ["third_party"]
+ignore_missing_imports = true
+warn_unused_ignores = true
+warn_redundant_casts = true
+no_implicit_optional = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+  "cuda: requires a verified CUDA GPU pod",
+  "integration: crosses module boundaries",
+  "regression: checks frozen behavioral parity",
+]

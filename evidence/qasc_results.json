@@ -1,0 +1,76 @@
+{
+  "channel_diagnostics": {
+    "centroid_effective_rank": 6.923318862915039,
+    "centroid_min_cosine_distance": 0.7151777744293213,
+    "declared_class_count": 8,
+    "declared_class_coverage": 1.0,
+    "exact_zero_fraction": 0.0,
+    "feature_std_mean": 0.9012131094932556,
+    "mean_l2_norm": 22.726896286010742,
+    "present_class_count": 8,
+    "probability_simplex_payload": false,
+    "shape_message_dim": 128,
+    "shape_slots": 4,
+    "token_id_payload": false,
+    "transport": "signed_dense_bfloat16_slots",
+    "within_class_feature_std_mean": 0.5472203493118286
+  },
+  "integrity": {
+    "canvas_assignment_count": 0,
+    "decoder_no_prefix_parity": {
+      "hiddenbench": {
+        "constrained_prediction_exact": true,
+        "hidden_bfloat16_exact": true,
+        "max_hidden_abs_difference": 0.0
+      },
+      "qasc": {
+        "constrained_prediction_exact": true,
+        "hidden_bfloat16_exact": true,
+        "max_hidden_abs_difference": 0.0
+      }
+    },
+    "designated_receiver_no_vote": true,
+    "exact_no_message_parity": true,
+    "independent_agent_token_rows": true,
+    "sealed_qasc_test_predictions_opened": false
+  },
+  "prefix_cosine": 0.9772002696990967,
+  "qasc": {
+    "accuracy": {
+      "deranged": 0.46799999475479126,
+      "final_only": 0.878000020980835,
+      "matched": 0.8080000281333923,
+      "no_message": 0.7260000109672546,
+      "random": 0.6230000257492065,
+      "self": 0.7379999756813049,
+      "zero": 0.7149999737739563
+    },
+    "examples": 1000,
+    "matched_minus_deranged": 0.3400000035762787,
+    "matched_minus_deranged_paired_bootstrap_ci95": [
+      0.3070000112056732,
+      0.3720000088214874
+    ],
+    "matched_minus_final_only": -0.07000000029802322,
+    "matched_minus_final_only_paired_bootstrap_ci95": [
+      -0.09600000083446503,
+      -0.04400000348687172
+    ],
+    "matched_minus_no_message": 0.0820000022649765,
+    "matched_minus_no_message_paired_bootstrap_ci95": [
+      0.05700000375509262,
+      0.10700000822544098
+    ],
+    "union_required_accuracy": {
+      "deranged": 0.2857142984867096,
+      "final_only": 0.4285714328289032,
+      "matched": 0.5714285969734192,
+      "no_message": 0.0,
+      "random": 0.1428571492433548,
+      "self": 0.5714285969734192,
+      "zero": 0.2857142984867096
+    },
+    "union_required_examples": 7
+  },
+  "source_artifact_sha256": "22eb06507952f84fe69720a41e06a00ece7c81fe856f0d34f8f86a71332814d1"
+}

@@ -1,0 +1,32 @@
+model:
+  id: dllm-hub/Qwen3-0.6B-diffusion-mdlm-v0.1
+  revision: c8d24a3f4adaeef46881b450e1bf7d1005203bd7
+  dtype: bfloat16
+data:
+  family: distributed_chain_lookup
+  agents: 2
+  hops: [2, 3, 4]
+  distractors_per_agent: 2
+  train_pairs: 5000
+  validation_pairs: 500
+  evaluation_pairs: 1000
+  counterfactual_receiver_context_fixed: true
+channel:
+  message_slots: 4
+  message_dim: 128
+  width: 256
+  attention_heads: 4
+  receiver_interface: gated_residual_fusion
+training:
+  steps: 960
+  batch_size: 64
+  learning_rate: 0.0003
+  weight_decay: 0.01
+  union_teacher_weight: 0.5
+  paired_separation_weight: 0.2
+  paired_batch_fraction: 0.25
+evaluation:
+  batch_size: 128
+  bootstrap_replicates: 5000
+  primary_output: designated_receiver_agent0
+  voting: false

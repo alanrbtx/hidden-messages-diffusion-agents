@@ -1,0 +1,51 @@
+model:
+  id: Dream-org/Dream-v0-Instruct-7B
+  revision: 05334cb9faaf763692dcf9d8737c642be2b2a6ae
+  dtype: bfloat16
+  attention_implementation: sdpa
+  output_position_offset: -1
+data:
+  source: allenai/qasc
+  source_revision: a34ba204eb9a33b919c10cc08f4f1c8dae5ec070
+  train_rows: 7134
+  train_sha256: f8a1092b081c812e68daf4f8d78446be46c28827c4ea9f72ff8b3e4c917d858e
+  development_rows: 1000
+  development_sha256: a88c888c082611fe5ecdfd62563026357068b2e23dfb0914bd31012ea230e20a
+  held_out_rows: 926
+  held_out_sha256: 3eff11b82d1dafa6432391d14de36a5e96a74bb22e53fff6d73760372728a844
+  distractors_per_agent: 4
+  labels: [A, B, C, D, E, F, G, H]
+  max_sequence_length: 768
+channel:
+  message_slots: 4
+  message_dim: 128
+  width: 512
+  classifier_width: 512
+  transport_dtype: bfloat16
+  incoming_aggregation: arithmetic_mean_over_other_agents
+  recurrent_exchange_rounds: 4
+  persistent_prefix: true
+training:
+  representation_seed: 810001
+  prefix_seed: 810002
+  representation_steps: 1000
+  prefix_steps: 1000
+  batch_size: 128
+  state_collection_batch_examples: 8
+  learning_rate: 0.001
+  prefix_learning_rate: 0.001
+  weight_decay: 0.0001
+  warmup_ratio: 0.05
+  gradient_clip_norm: 1.0
+  message_variance_weight: 0.1
+  target_message_std: 0.2
+  prefix_relative_mse_weight: 0.25
+evaluation:
+  conditions: [no_message, matched, final_only, deranged, zero, random, self]
+  batch_examples: 8
+  bootstrap_replicates: 10000
+  bootstrap_seed: 810101
+  random_message_seed: 810301
+  primary_output: designated_receiver_agent0
+  voting: false
+

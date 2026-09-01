@@ -1,0 +1,71 @@
+schema_version: 1
+resolved_at: "2026-08-30"
+sources:
+  dllm:
+    url: https://github.com/ZHZisZZ/dllm.git
+    revision: ca176752fbceec49c6b4777a2c18ae88e4eb10ed
+    integration: git-submodule
+  dllm_lm_evaluation_harness:
+    url: https://github.com/ZHZisZZ/lm-evaluation-harness.git
+    revision: dca091dbee3d6ee1dab268e9f649aa64e8db97d8
+    integration: nested-git-submodule
+  dream_code:
+    url: https://github.com/DreamLM/Dream.git
+    revision: 31f94a60d187e3fd481fee3bbc2c732eb94a879c
+    integration: reference-only
+  llada_code:
+    url: https://github.com/ML-GSAI/LLaDA.git
+    revision: 9182493720ed723ef8031210d85959364e51cbe0
+    integration: reference-only
+  hiddenbench_code:
+    url: https://github.com/Yassellee/HiddenBench_ICML.git
+    revision: 3be6ca16973e4fb751ffc0dfb7eb11f2d28335d1
+    integration: phase7-native-external-adapter
+  musique_code:
+    url: https://github.com/StonyBrookNLP/musique.git
+    revision: 922ac98f19a201998dbdae6d7f2887a5258dbdeb
+    integration: phase7-natural-adapter
+  fanoutqa_code:
+    url: https://github.com/zhudotexe/fanoutqa.git
+    revision: 989f4c40d9deea1ecb0897d7a17a9c0fe20d5c33
+    integration: future-dataset-adapter
+models:
+  tiny_a2d:
+    id: dllm-hub/Qwen3-0.6B-diffusion-mdlm-v0.1
+    revision: c8d24a3f4adaeef46881b450e1bf7d1005203bd7
+    role: smoke
+  dream:
+    id: Dream-org/Dream-v0-Instruct-7B
+    revision: 05334cb9faaf763692dcf9d8737c642be2b2a6ae
+    role: primary
+  llada:
+    id: GSAI-ML/LLaDA-8B-Instruct
+    revision: 08b83a6feb34df1a6011b80c3c00c7563e963b07
+    role: pinned-reference-excluded-from-current-scope
+datasets:
+  qasc:
+    id: allenai/qasc
+    config: default
+    revision: a34ba204eb9a33b919c10cc08f4f1c8dae5ec070
+    role: phase7-natural-adapter
+  hiddenbench:
+    id: YuxuanLi1225/HiddenBench
+    config: default
+    revision: 1e3c25b1fd798c6717f4df0463edd3825c8e37f9
+    role: phase7-native-external-adapter
+  musique:
+    id: StonyBrookNLP/musique
+    config: MuSiQue-Answerable-v1.0
+    revision: 922ac98f19a201998dbdae6d7f2887a5258dbdeb
+    archive_sha256: 98f839bf2fd5319f5c688aed77901a6d5c30b3b9f9f691ab9a8ecafb045ee0cd
+    role: phase7-primary-natural-adapter
+  gsm8k:
+    id: openai/gsm8k
+    config: main
+    revision: 740312add88f781978c0658806c59bc2815b9866
+    role: phase2-smoke
+  countdown_3to4:
+    id: Jiayi-Pan/Countdown-Tasks-3to4
+    config: default
+    revision: 408f70d177020686d34a56bba5952feb45aaaee4
+    role: phase2-smoke

@@ -1,0 +1,58 @@
+model:
+  id: Dream-org/Dream-v0-Instruct-7B
+  revision: 05334cb9faaf763692dcf9d8737c642be2b2a6ae
+  dtype: bfloat16
+  attention_implementation: sdpa
+adapter:
+  checkpoint_sha256: 28b881a67fd298b589411e93c6e86fc8ddef4412d926d7ea53b45a09d8b4ed2f
+  layers: [26, 27]
+  target_modules: [q_proj, k_proj, v_proj, o_proj, gate_proj, up_proj, down_proj]
+  rank: 16
+  alpha: 32.0
+  dropout: 0.0
+data:
+  family: distributed_rendezvous_lookup
+  slot_values: [A, B, C, D, E, F, G, H, I, J]
+  answer_values: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  train_pairs: 2500
+  validation_pairs: 256
+  evaluation_pairs: 512
+channel:
+  message_slots: 4
+  message_dim: 128
+  width: 512
+  classifier_width: 512
+  transport_dtype: bfloat16
+  round1_alignment_template: " requested slot {label}."
+  round2_alignment_template: " code {label}."
+generation:
+  steps: 10
+  max_new_tokens: 10
+  temperature: 0.0
+  top_p: 1.0
+  top_k: 50
+  algorithm: entropy
+  exchange_mode: two_stage
+  communication_step_indices: [2, 4]
+  answer_commit_not_before_steps:
+    receiver: 7
+    sender: 3
+training:
+  representation_steps_per_round: 1000
+  prefix_steps_per_round: 1000
+  batch_size: 128
+  state_collection_batch_examples: 16
+  learning_rate: 0.001
+  prefix_learning_rate: 0.001
+  weight_decay: 0.0001
+  warmup_ratio: 0.05
+  gradient_clip_norm: 1.0
+  message_variance_weight: 0.1
+  target_message_std: 0.2
+  prefix_relative_mse_weight: 0.25
+evaluation:
+  batch_examples: 8
+  bootstrap_replicates: 10000
+  primary_output: designated_receiver_agent0
+  voting: false
+

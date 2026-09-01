@@ -1,0 +1,33 @@
+{
+  "canvas_assignment_count": 0,
+  "sealed_test": {
+    "accuracy": {
+      "deranged": 0.09300000220537186,
+      "matched": 0.7294999957084656,
+      "no_message": 0.08649999648332596,
+      "random_moment_matched": 0.10000000149011612,
+      "self": 0.09149999916553497,
+      "wrong_fact": 0.03150000050663948,
+      "zero": 0.10249999910593033
+    },
+    "examples": 2000,
+    "matched_minus_deranged": 0.6364999935030937,
+    "matched_minus_deranged_pair_bootstrap_ci95": [
+      0.6150000095367432,
+      0.6579999923706055
+    ],
+    "matched_minus_no_message": 0.6429999992251396,
+    "matched_minus_no_message_pair_bootstrap_ci95": [
+      0.6230000257492065,
+      0.6639999747276306
+    ],
+    "matched_pair_consistency": 0.531000018119812,
+    "pairs": 1000,
+    "wrong_fact_answer_flip_rate": 0.8939999938011169,
+    "wrong_fact_target_rate": 0.7294999957084656,
+    "wrong_fact_target_rate_given_matched_correct": 0.7278957962989807
+  },
+  "source_artifact_sha256": "1cf9d2c0130776566201590c6c8a08f65c299818566b21f14d02ffcd44f76e97",
+  "training_steps": 960,
+  "verdict": "pass"
+}
