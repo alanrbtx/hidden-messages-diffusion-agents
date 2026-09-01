@@ -12,7 +12,8 @@ predictions, and aggregate evidence used in the paper. It contains no newly run 
 - `code/src/hidden_messages/`: latent-channel, diffusion-sampling, and dataset code.
 - `code/scripts/`: QASC construction, controlled-task evaluation, QASC evaluation, aggregation,
   and table-generation entry points.
-- `configs/`: paper-facing configurations for distributed QASC and the Dream-7B rendezvous.
+- `configs/`: paper-facing configurations for distributed QASC and the Dream-7B
+  dependency-spanning task.
 - `evidence/tiny_controlled_results.json`: Tiny-A2D HM-Synth accuracies, paired bootstrap
   intervals, and targeted-intervention outcomes selected from the immutable run artifact.
 - `evidence/tiny_controlled_predictions.jsonl`: all 2,000 HM-Synth test examples under every

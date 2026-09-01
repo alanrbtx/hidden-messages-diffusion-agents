@@ -106,10 +106,10 @@ def main() -> None:
 \begin{{table}}[t]
 \centering
 \caption{{Three views of the hidden channel.  Accuracies are percentages and contrasts are
-percentage points.  Tiny-A2D establishes content transfer on HM-Synth; the Dream-7B rendezvous
+percentage points.  Tiny-A2D establishes content transfer on HM-Synth; the Dream-7B dependency-spanning task
 tests a sequential dependency, and distributed QASC tests split natural evidence.  The schedule
 reversal in the last column is the central timing result: late fusion fails on the Dream-7B
-rendezvous but wins on QASC.}}
+dependency-spanning task but wins on QASC.}}
 \label{{tab:main-results}}
 \small
 \setlength{{\tabcolsep}}{{2.7pt}}
@@ -121,7 +121,7 @@ HM-Synth (Tiny-A2D) & {pct(tiny['accuracy']['no_message'])} &
 {pct(tiny['accuracy']['matched'])} & {pct(tiny['accuracy']['deranged'])} &
 \multicolumn{{1}}{{c}}{{--}} & ${pp(tiny['matched_minus_deranged'])}$ &
 \multicolumn{{1}}{{c}}{{--}} \\
-Dream-7B rendezvous & {pct(synthetic['no_message_accuracy']['mean'])} &
+Dependency spanning (Dream-7B) & {pct(synthetic['no_message_accuracy']['mean'])} &
 {pct(synthetic['matched_accuracy']['mean'])} & {pct(synthetic['deranged_accuracy']['mean'])} &
 {pct(synthetic['final_only_accuracy']['mean'])} &
 ${pp(synthetic['matched_minus_deranged']['mean'])}$ &
