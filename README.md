@@ -26,8 +26,6 @@ predictions, and aggregate evidence used in the paper. It contains no newly run 
   each controlled replicate.
 - `checkpoints/qasc_dense_latent_prefix_channel.pt`: the learned QASC channel state.
 - `checkpoints/tiny_a2d_channel.pt`: the learned Tiny-A2D HM-Synth communication module.
-- `paper_generation/`: the deterministic script that selects paper-facing fields from the
-  immutable run artifacts.
 - `SHA256SUMS`: integrity inventory for the unpacked supplement.
 
 ## Reproducing paper values
