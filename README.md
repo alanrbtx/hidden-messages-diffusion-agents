@@ -7,6 +7,15 @@ Communication.”
 This archive packages the implementation, configurations, channel weights, per-example
 predictions, and aggregate evidence used in the paper. It contains no newly run experiment.
 
+## Hugging Face checkpoints
+
+- [Dream-7B / QASC communication channel](https://huggingface.co/RobotLearningLab/hidden-messages-dream-qasc)
+- [Tiny-A2D / HM-Synth communication channel](https://huggingface.co/RobotLearningLab/hidden-messages-tiny-a2d)
+
+Each repository includes the original channel checkpoint, configuration, download instructions,
+and license information. These are task-specific communication adapters, not standalone language
+models; download the corresponding base backbones separately.
+
 ## Contents
 
 - `code/src/hidden_messages/`: latent-channel, diffusion-sampling, and dataset code.
