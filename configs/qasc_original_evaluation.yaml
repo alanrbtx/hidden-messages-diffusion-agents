@@ -1,0 +1,124 @@
+protocol_id: phase8-qasc-hiddenbench-dense-prefix-posthoc-endpoints-v1
+stage: post_hoc_endpoint_evaluation
+non_claim: >-
+  Post-hoc single-seed development measurement using the unchanged checkpoint whose registered
+  training gate failed. Endpoint results are exploratory only and cannot retrospectively pass the
+  original training gate, establish confirmation, authorize manuscript prose, or support
+  text/TIE/compute superiority, MuSiQue, second-backbone, or broad-generalization claims.
+post_hoc:
+  source_training_run_id: phase8-qasc-hiddenbench-dense-prefix-dev-20260901-ag-r8k4t2-r7
+  source_inventory_sha256: 3ba92023f2ca98e4a57ce319f7e5ebf5ca76cd5aa17e935974ea15ae2f0cb59d
+  source_revision: 84c3c3fbee57437f1b9274714b2f6d3c53e303c35d01395c918da7c24deb48e3
+  source_channel_sha256: 83397168be971c5de6edb51e8d57ddeee87781cae13e77ba55bfb69df3b5f66d
+model:
+  id: Dream-org/Dream-v0-Instruct-7B
+  revision: 05334cb9faaf763692dcf9d8737c642be2b2a6ae
+  dtype: bfloat16
+  requested_attention_implementation: sdpa
+  output_position_offset: -1
+  weight_manifest_sha256: d97cfa4b2e3a247447039efb60b29e626d7199cc036a1a53d62184a2ef08a2ab
+qasc:
+  adapter_run_id: phase7-qasc-distributed-adapter-20260901-ag-p7q4m8-r3
+  adapter_inventory_sha256: dbdc41c03b1238b8d328812325f5a6775924078b111a8699d0914bce11627578
+  train_file: train.jsonl
+  train_rows: 7134
+  train_sha256: f8a1092b081c812e68daf4f8d78446be46c28827c4ea9f72ff8b3e4c917d858e
+  development_file: validation.jsonl
+  development_rows: 1000
+  development_sha256: a88c888c082611fe5ecdfd62563026357068b2e23dfb0914bd31012ea230e20a
+  sealed_test_file: test.jsonl
+  sealed_test_rows: 926
+  sealed_test_sha256: 3eff11b82d1dafa6432391d14de36a5e96a74bb22e53fff6d73760372728a844
+  baseline_run_id: phase7-qasc-information-gap-dev-20260901-ag-p7q4m8-r9
+  baseline_inventory_sha256: 6f1267b3162bc9ad51c48a0ba1c77469c02850bce9aa0fee3b1d1f6e78bfbfa6
+  union_required_ids_file: union_required_ids.txt
+hiddenbench:
+  adapter_run_id: phase7-hiddenbench-official-adapter-20260901-ag-m8h3r6-r1
+  adapter_inventory_sha256: 7b27b149f37e6534f23966b9898653d024d2d9b05cf4c2a981067445ffc6ce35
+  file: official.jsonl
+  rows: 325
+  file_sha256: df13402e5feb1db47b0cc00b4ebd1eba4c47e4522f8045192f3e9fffef25be6e
+  baseline_run_id: phase7-hiddenbench-information-gap-20260901-ag-m8h3r6-r3
+  baseline_inventory_sha256: 357d0b943aff6fdc11f336ff5641b4acbb57c342af37c1816574553d89ca1df7
+  context_required_ids_file: context_required_ids.txt
+  split_salt: phase8-hiddenbench-method-split-v1
+  development_n4_tasks: 18
+  development_n3_tasks: 2
+  confirmation_n4_tasks: 40
+  confirmation_n3_tasks: 5
+surface:
+  qasc_labels: [A, B, C, D, E, F, G, H]
+  hiddenbench_labels: [A, B, C, D]
+  assistant_prefix: "Answer: "
+  prefix_alignment_template: " correct answer {label}."
+  message_slots: 4
+  max_sequence_length_qasc: 768
+  max_sequence_length_hiddenbench: 8192
+  qasc_prompt_template: |-
+    QASC multiple-choice task.
+    {question}
+    {evidence}
+    Use the supplied evidence when available. Return exactly one option label from A through H.
+  hiddenbench_prompt_template: |-
+    HiddenBench collective-decision task.
+    {question}
+    Private information available in this condition:
+    {private_information}
+    Decide using only the information shown. Return exactly one option label from A through D.
+channel:
+  message_dim: 128
+  width: 512
+  classifier_width: 512
+  transport_dtype: bfloat16
+  incoming_aggregation: arithmetic_mean_over_other_agents
+  exchange_rounds: 4
+  persistent_prefix: true
+training:
+  seed: 810001
+  prefix_seed: 810002
+  representation_steps: 1000
+  prefix_steps: 1000
+  state_collection_batch_examples: 8
+  diagnostic_batch_size: 128
+  batch_size: 128
+  learning_rate: 0.001
+  prefix_learning_rate: 0.001
+  weight_decay: 0.0001
+  warmup_ratio: 0.05
+  gradient_clip_norm: 1.0
+  lambda_message_variance: 0.1
+  target_message_std: 0.2
+  lambda_prefix_relative_mse: 0.25
+  gate:
+    train_classifier_accuracy_min: 0.90
+    development_classifier_accuracy_min: 0.45
+    prefix_cosine_min: 0.95
+    message_feature_std_min: 0.10
+evaluation:
+  condition_order: [no_message, matched, final_only, deranged, zero, random, self]
+  qasc_batch_examples: 8
+  hiddenbench_batch_examples: 1
+  bootstrap_replicates: 10000
+  qasc_bootstrap_seed: 810101
+  hiddenbench_bootstrap_seed: 810201
+  random_message_seed: 810301
+  derangement_salt: phase8-method-derangement-v1
+  primary_output: designated_receiver_agent0
+  no_vote: true
+  qasc_gate:
+    matched_minus_no_message_min: 0.03
+    matched_minus_deranged_min: 0.03
+    matched_minus_final_only_min: 0.01
+    require_all_ci_low_above_zero: true
+  hiddenbench_gate:
+    matched_minus_no_message_min: 0.05
+    matched_minus_deranged_min: 0.05
+    matched_minus_final_only_min: 0.02
+    require_all_cluster_ci_low_above_zero: true
+    n4_matched_minus_no_message_min: 0.05
+  joint_gate:
+    require_qasc_pass: true
+    require_hiddenbench_pass: true
+    require_exact_no_message_parity: true
+    require_independent_agent_canvases: true
+    require_no_vote: true

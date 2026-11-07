@@ -1,0 +1,188 @@
+{
+  "stage": "release_validation",
+  "source_integrity": {
+    "stage": "release_validation",
+    "original_sources_equal": {
+      "scripts/phase5_hm_synth_tiny.py": "c37307649d3324cf0ed187e5138203499afeec2cd33882993d53ba0bb5be8c68",
+      "scripts/phase6_dream_balanced_oracle_prefix_audit.py": "86d403aea4fe1c2572e4129f6ec60f1577268c9cc79bb508e4ad8903242c23b6",
+      "scripts/phase6_dream_balanced_two_round.py": "006596cb322e785b8d3d9bde100b9782c7b350817fc8a968918700f457a77ccc",
+      "scripts/phase6_dream_dense_latent_two_round.py": "f1368fffcee6665e6fd71af6d2a7db09d5642baa06fca385f54e8a66b1e98d88",
+      "scripts/phase6_dream_input_prefix.py": "13fcc1e83f946d107dd0ffb8b1d87e0ca76fe1ae1be84b3a8e28ee22cda2a5e6",
+      "scripts/phase6_dream_lora_input_prefix.py": "81c85e185f9b23f0532569823aa44218a5271d9bb68de16a40add6a279fcd0af",
+      "scripts/phase6_dream_semantic_two_round.py": "bdd75dac53a67ce8c5ab9cd84d2551a0ba84b676ba39587d51bcf741a77217f1",
+      "scripts/phase6_v15_dependency_span_confirmation_aggregate.py": "1a7b6198ea6169aae7903059ed017d4f69e0dea44985a0baa8da88d2cc671ea4",
+      "scripts/phase7_build_qasc_distributed.py": "8861dbf0e6d3be6557b85abab2b582f5905abc926870b353a7c6b1b20ac614a5",
+      "scripts/phase8_qasc_hiddenbench_dense_prefix.py": "c2e07364686e87a59f8741604cde5c4f5a1b28a3f6bf9945639fde489f8b878f",
+      "scripts/verify_phase6_v15_dependency_span_confirmation.py": "12adc724dc897f26582aa5827a15f3a7b927a4b51c5e44e45860e139bfc8906b",
+      "scripts/verify_phase8_posthoc_endpoints_r1.py": "acacc6214555d7875e72fb9c3b240d754eeea0efce87f9786bfe77d866bf7422",
+      "src/hidden_messages/__init__.py": "c2be0b2e654064494372e9758bb0b03d01ade223e440795d04626b59a05a72a0",
+      "src/hidden_messages/adaptation/__init__.py": "e0b2ee6aa1e5c0ba4d4a40a34304aadeac1913e7e348cf4063222ff51f1e6ba5",
+      "src/hidden_messages/adaptation/lora.py": "3fc0f78f69521444625861637660e745a0b42fb4f87c40baeb0ec96847aee0a2",
+      "src/hidden_messages/agents/__init__.py": "e67b530ce832adedff773cf01bbcb20d32e2fe322a420b828389f2513e5ae811",
+      "src/hidden_messages/agents/rng.py": "651214030649147677b015505c35b43b691a4f80c8e5712d45c1194c3f7f8d28",
+      "src/hidden_messages/agents/runner.py": "b1d51436eba66ab6c27d1d2434bc018303c32a59e8aaaf41bc0d83c3b43e4e38",
+      "src/hidden_messages/communication/__init__.py": "bf21f24ba7b215c445ffe2278f3014c5f7500f3de5885a7e1a7202b143684eb4",
+      "src/hidden_messages/communication/compressor.py": "3d052598674cdd1cd10963eb3b7971a58ec6ebcb9e4ea00469c246de49bbf7a5",
+      "src/hidden_messages/communication/dense_latent_prefix.py": "c4459b5106216727df5618b819fa566017e2704f874cac232847a0351d9ad93d",
+      "src/hidden_messages/communication/fusion.py": "eb57a6226a0c02abcac3b430c0094b0b60dad6055945852a894dadbceecb789c",
+      "src/hidden_messages/communication/input_prefix.py": "31bad7773c6b98a9cd61f8505a54f979d3365432af4bad44f147a5530815d57f",
+      "src/hidden_messages/communication/interventions.py": "b644ccf2254d7dec3385ff990d0a64d1a6f3468ec9b9cecf7ed5631d6c05324a",
+      "src/hidden_messages/communication/regularization.py": "82707efd922156b0cabc99fa2fb994375433af0f69cfb5ba7e64f563b73cca9d",
+      "src/hidden_messages/communication/semantic_prototype.py": "4d026ec1f86f424d4e97e66dde6b9147c5563094dba01749788cf396760bd73b",
+      "src/hidden_messages/communication/transport.py": "3d7848e521a4928383aa7e55e6a94ae396ead0bee6c71512a2d3420392946a4b",
+      "src/hidden_messages/contracts.py": "018e2234dc92d0cd6ad9c4854a8dd1cc11812940b30b18a2a1baf53ddeae3201",
+      "src/hidden_messages/datasets/__init__.py": "e8527c53773e66d883a215db7eeccee9f06bb5adf9b58a3b1e9c2bf3e5dc2545",
+      "src/hidden_messages/datasets/distributed_qa.py": "9a2d29e740d22a4b65efe608fe1f28021a84746d897b392e435890833750ec25",
+      "src/hidden_messages/datasets/hiddenbench.py": "99982200d080f27c332d9ffd5951f3aa4411f651b779def883b35e14f459ef10",
+      "src/hidden_messages/datasets/hm_synth/__init__.py": "f671907b7644867398071fc6d1aa7475cce6613a58e8b92e74c260c4615b23c7",
+      "src/hidden_messages/datasets/hm_synth/batching.py": "ca63cc8aace0efdac9e97b7c18604c0f1f577495a8a1a84ff098f47694b1a5a6",
+      "src/hidden_messages/datasets/hm_synth/generator.py": "3a671a50a0de260d6fc96dbc05fa50d04187f68b63f3bf11b5276c5a0de202eb",
+      "src/hidden_messages/datasets/musique.py": "d44e70f9240425f3af2eb221c9b4f945c083d65ee7106cb0943f2fcc1cb8111f",
+      "src/hidden_messages/datasets/qasc.py": "84e08675fedf702401ac0e5a0e0bd29cf50b119c6d5d8101b8f7a31c5bb75d48",
+      "src/hidden_messages/diffusion/__init__.py": "fff6ca1855ba20a32cc63a94fdfcefa4a8da579938b6af42c20603962cc2ab5f",
+      "src/hidden_messages/diffusion/callbacks.py": "a5e394d5dcb3efa82840a398f9473a1b7e51ca58d2dadbc321c956add004b17a",
+      "src/hidden_messages/diffusion/dream_sampler.py": "828b077e0e5a27ba559d25a7ea4cea291615ed0f15ceb08807e5bc02f0a74590",
+      "src/hidden_messages/diffusion/persistent_prefix.py": "9a3aa69f04ea9de64f557672d9ce9067ebf9d405cb53560f2f42606b0dc6f854",
+      "src/hidden_messages/diffusion/sampler.py": "bf77b2805f899eb46d241a687d3cd60ca834215aa77b13e0b9a7d5da0e6d57d8",
+      "src/hidden_messages/utils/__init__.py": "e91c4073f08961940ad3f5952af01a98321eeb23fdd5d052cc0686ea7a46450b",
+      "src/hidden_messages/utils/checksums.py": "3034530b811ba86f22ca31a239b4550d0556ac91150df1ba83af504d49214b2f",
+      "src/hidden_messages/utils/manifests.py": "f457461bbcd6b716612a266c68cff10a6af141153fd78738ededfa9b7da490d0",
+      "src/hidden_messages/utils/reproducibility.py": "d15c4aa22b3500b057645dbfac21579df6c6273fbf6847401bde78eea4753ef7"
+    },
+    "original_config_sha256": "756aba88e5ae1b09ba80a60aef1ac0f754359925b9424696bc2d4b6a2a73e56d",
+    "imports_passed": true,
+    "gpu": "NVIDIA H100 80GB HBM3"
+  },
+  "endpoint_replay": {
+    "stage": "release_validation",
+    "examples": 1000,
+    "hashes": {
+      "data": "a88c888c082611fe5ecdfd62563026357068b2e23dfb0914bd31012ea230e20a",
+      "checkpoint": "83397168be971c5de6edb51e8d57ddeee87781cae13e77ba55bfb69df3b5f66d",
+      "config": "756aba88e5ae1b09ba80a60aef1ac0f754359925b9424696bc2d4b6a2a73e56d",
+      "reference": "ca8c48bd4a7d8ae6d56f5fd1173a9a367c9c9f263d4e9f10fb68907858889f03",
+      "model_weights": "d97cfa4b2e3a247447039efb60b29e626d7199cc036a1a53d62184a2ef08a2ab"
+    },
+    "gpu": "NVIDIA H100 80GB HBM3",
+    "torch": "2.12.0+cu130",
+    "cuda": "13.0",
+    "python": "3.12.3",
+    "record_messages": true,
+    "source_sha256": {
+      "scripts/generate_results.py": "10f572d5983275386b84a95ba9c91b8df0dfbbc5660fa90afe6f54af396acb46",
+      "scripts/phase5_hm_synth_tiny.py": "c37307649d3324cf0ed187e5138203499afeec2cd33882993d53ba0bb5be8c68",
+      "scripts/phase6_dream_balanced_oracle_prefix_audit.py": "86d403aea4fe1c2572e4129f6ec60f1577268c9cc79bb508e4ad8903242c23b6",
+      "scripts/phase6_dream_balanced_two_round.py": "006596cb322e785b8d3d9bde100b9782c7b350817fc8a968918700f457a77ccc",
+      "scripts/phase6_dream_dense_latent_two_round.py": "f1368fffcee6665e6fd71af6d2a7db09d5642baa06fca385f54e8a66b1e98d88",
+      "scripts/phase6_dream_input_prefix.py": "13fcc1e83f946d107dd0ffb8b1d87e0ca76fe1ae1be84b3a8e28ee22cda2a5e6",
+      "scripts/phase6_dream_lora_input_prefix.py": "81c85e185f9b23f0532569823aa44218a5271d9bb68de16a40add6a279fcd0af",
+      "scripts/phase6_dream_semantic_two_round.py": "bdd75dac53a67ce8c5ab9cd84d2551a0ba84b676ba39587d51bcf741a77217f1",
+      "scripts/phase6_v15_dependency_span_confirmation_aggregate.py": "1a7b6198ea6169aae7903059ed017d4f69e0dea44985a0baa8da88d2cc671ea4",
+      "scripts/phase7_build_qasc_distributed.py": "8861dbf0e6d3be6557b85abab2b582f5905abc926870b353a7c6b1b20ac614a5",
+      "scripts/phase8_qasc_hiddenbench_dense_prefix.py": "c2e07364686e87a59f8741604cde5c4f5a1b28a3f6bf9945639fde489f8b878f",
+      "scripts/reproduce_qasc.py": "3465e677b3b920efdcbc83df4e95bb844ff1b7579911ca271e955e6a02773ff7",
+      "scripts/verify_phase6_v15_dependency_span_confirmation.py": "12adc724dc897f26582aa5827a15f3a7b927a4b51c5e44e45860e139bfc8906b",
+      "scripts/verify_phase8_posthoc_endpoints_r1.py": "acacc6214555d7875e72fb9c3b240d754eeea0efce87f9786bfe77d866bf7422",
+      "src/hidden_messages/__init__.py": "c2be0b2e654064494372e9758bb0b03d01ade223e440795d04626b59a05a72a0",
+      "src/hidden_messages/adaptation/__init__.py": "e0b2ee6aa1e5c0ba4d4a40a34304aadeac1913e7e348cf4063222ff51f1e6ba5",
+      "src/hidden_messages/adaptation/lora.py": "3fc0f78f69521444625861637660e745a0b42fb4f87c40baeb0ec96847aee0a2",
+      "src/hidden_messages/agents/__init__.py": "e67b530ce832adedff773cf01bbcb20d32e2fe322a420b828389f2513e5ae811",
+      "src/hidden_messages/agents/rng.py": "651214030649147677b015505c35b43b691a4f80c8e5712d45c1194c3f7f8d28",
+      "src/hidden_messages/agents/runner.py": "b1d51436eba66ab6c27d1d2434bc018303c32a59e8aaaf41bc0d83c3b43e4e38",
+      "src/hidden_messages/communication/__init__.py": "bf21f24ba7b215c445ffe2278f3014c5f7500f3de5885a7e1a7202b143684eb4",
+      "src/hidden_messages/communication/compressor.py": "3d052598674cdd1cd10963eb3b7971a58ec6ebcb9e4ea00469c246de49bbf7a5",
+      "src/hidden_messages/communication/dense_latent_prefix.py": "c4459b5106216727df5618b819fa566017e2704f874cac232847a0351d9ad93d",
+      "src/hidden_messages/communication/fusion.py": "eb57a6226a0c02abcac3b430c0094b0b60dad6055945852a894dadbceecb789c",
+      "src/hidden_messages/communication/input_prefix.py": "31bad7773c6b98a9cd61f8505a54f979d3365432af4bad44f147a5530815d57f",
+      "src/hidden_messages/communication/interventions.py": "b644ccf2254d7dec3385ff990d0a64d1a6f3468ec9b9cecf7ed5631d6c05324a",
+      "src/hidden_messages/communication/regularization.py": "82707efd922156b0cabc99fa2fb994375433af0f69cfb5ba7e64f563b73cca9d",
+      "src/hidden_messages/communication/semantic_prototype.py": "4d026ec1f86f424d4e97e66dde6b9147c5563094dba01749788cf396760bd73b",
+      "src/hidden_messages/communication/transport.py": "3d7848e521a4928383aa7e55e6a94ae396ead0bee6c71512a2d3420392946a4b",
+      "src/hidden_messages/contracts.py": "018e2234dc92d0cd6ad9c4854a8dd1cc11812940b30b18a2a1baf53ddeae3201",
+      "src/hidden_messages/datasets/__init__.py": "e8527c53773e66d883a215db7eeccee9f06bb5adf9b58a3b1e9c2bf3e5dc2545",
+      "src/hidden_messages/datasets/distributed_qa.py": "9a2d29e740d22a4b65efe608fe1f28021a84746d897b392e435890833750ec25",
+      "src/hidden_messages/datasets/hiddenbench.py": "99982200d080f27c332d9ffd5951f3aa4411f651b779def883b35e14f459ef10",
+      "src/hidden_messages/datasets/hm_synth/__init__.py": "f671907b7644867398071fc6d1aa7475cce6613a58e8b92e74c260c4615b23c7",
+      "src/hidden_messages/datasets/hm_synth/batching.py": "ca63cc8aace0efdac9e97b7c18604c0f1f577495a8a1a84ff098f47694b1a5a6",
+      "src/hidden_messages/datasets/hm_synth/generator.py": "3a671a50a0de260d6fc96dbc05fa50d04187f68b63f3bf11b5276c5a0de202eb",
+      "src/hidden_messages/datasets/musique.py": "d44e70f9240425f3af2eb221c9b4f945c083d65ee7106cb0943f2fcc1cb8111f",
+      "src/hidden_messages/datasets/qasc.py": "84e08675fedf702401ac0e5a0e0bd29cf50b119c6d5d8101b8f7a31c5bb75d48",
+      "src/hidden_messages/diffusion/__init__.py": "fff6ca1855ba20a32cc63a94fdfcefa4a8da579938b6af42c20603962cc2ab5f",
+      "src/hidden_messages/diffusion/callbacks.py": "a5e394d5dcb3efa82840a398f9473a1b7e51ca58d2dadbc321c956add004b17a",
+      "src/hidden_messages/diffusion/dream_sampler.py": "828b077e0e5a27ba559d25a7ea4cea291615ed0f15ceb08807e5bc02f0a74590",
+      "src/hidden_messages/diffusion/persistent_prefix.py": "9a3aa69f04ea9de64f557672d9ce9067ebf9d405cb53560f2f42606b0dc6f854",
+      "src/hidden_messages/diffusion/sampler.py": "bf77b2805f899eb46d241a687d3cd60ca834215aa77b13e0b9a7d5da0e6d57d8",
+      "src/hidden_messages/utils/__init__.py": "e91c4073f08961940ad3f5952af01a98321eeb23fdd5d052cc0686ea7a46450b",
+      "src/hidden_messages/utils/checksums.py": "3034530b811ba86f22ca31a239b4550d0556ac91150df1ba83af504d49214b2f",
+      "src/hidden_messages/utils/manifests.py": "f457461bbcd6b716612a266c68cff10a6af141153fd78738ededfa9b7da490d0",
+      "src/hidden_messages/utils/reproducibility.py": "d15c4aa22b3500b057645dbfac21579df6c6273fbf6847401bde78eea4753ef7"
+    },
+    "model_metadata_sha256": {
+      "added_tokens.json": "32ad9d49fafda64e737853737fe3be3e33cce3f719a159ed73f04cbd81a690ce",
+      "config.json": "11afc7fe7a1881e73dcd70cca6868aaaf8eb89ad45ea5fc6426c3fb82dec9340",
+      "generation_config.json": "e4fa42a31ef22740804534395c7a18f335a3c1f9abd9db83a6941b1c8748b2ee",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "model.safetensors.index.json": "998a078123ffc97763690de7f2a677eb89168af5eaf8a5e12e6bc24d18e25bdb",
+      "special_tokens_map.json": "fa14641fdc084244b0a530556b1d5bfcb9fa0ed9151a780ffec3b44ba96a0dfe",
+      "tokenizer_config.json": "b0e9c1a6299d8832a1362d6b24f007de8a2acfe0243d8a3a1d1b57aa8250f7ee",
+      "vocab.json": "87a257b04b17642a0688c98cd1df89c398bda4fee532d6f88b38a659ecb4ac8d"
+    },
+    "packages": {
+      "transformers": "4.57.0",
+      "accelerate": "1.11.0",
+      "numpy": "2.2.6",
+      "peft": "0.17.1",
+      "huggingface-hub": "0.36.2"
+    },
+    "decoder_parity": {
+      "hidden_bfloat16_exact": true,
+      "constrained_prediction_exact": true,
+      "max_hidden_abs_difference": 0.0
+    },
+    "conditions": {
+      "final_only": {
+        "correct": 878,
+        "accuracy": 0.878,
+        "reference_labels_equal": 1000,
+        "profile": {
+          "model_agent_forwards_per_example": 3,
+          "communication_rounds": 1,
+          "transmitted_bytes_per_example": 2048,
+          "message_sha256": "7f5312b30e6784a464deab1f55b3f91c3cddaf274402b7d4b3fcb84cebb5060a"
+        }
+      },
+      "matched": {
+        "correct": 808,
+        "accuracy": 0.808,
+        "reference_labels_equal": 1000,
+        "profile": {
+          "model_agent_forwards_per_example": 9,
+          "communication_rounds": 4,
+          "transmitted_bytes_per_example": 8192,
+          "round_message_sha256": [
+            "7f5312b30e6784a464deab1f55b3f91c3cddaf274402b7d4b3fcb84cebb5060a",
+            "0d12a35f19fa7eb040f99654cc94415168a92e1b7ae9ee19a006c39c01ae5cd9",
+            "853b2326001b9d47b088afe7c4373e98b05f43e3234781179b4ec02ca7f2a742",
+            "ca8c9ca21366e2bf80310cea16e1f21b1dc5b659f8103d89ce2218a5b9af0bf9"
+          ]
+        }
+      }
+    },
+    "elapsed_seconds": 269.85214783716947,
+    "all_requested_predictions_match": true
+  },
+  "trace_checks": {
+    "final_only": {
+      "recorded_exchanges": 1,
+      "finite": true,
+      "saved_tensors_match_evaluation_hashes": true,
+      "original_message_hashes_equal": true
+    },
+    "matched": {
+      "recorded_exchanges": 4,
+      "finite": true,
+      "saved_tensors_match_evaluation_hashes": true,
+      "original_message_hashes_equal": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "adapter": "qasc-distributed-v1",
+  "counterfactual_status": "not_materialized_pending_separate_protocol",
+  "dataset_id": "allenai/qasc",
+  "dataset_revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+  "designated_receiver": 0,
+  "distractor_pool": "deduplicated derived-training gold facts only",
+  "distractors_per_agent": 4,
+  "license": "CC-BY-4.0",
+  "num_agents": 2,
+  "split_policy": {
+    "official_test": "unlabeled submission-only; not emitted",
+    "salt": "qasc-distributed-v1-derived-validation",
+    "test": "926 official-validation rows, sealed",
+    "train": "7134 official-train rows after SHA-256 holdout",
+    "validation": "1000 official-train rows with lowest salted SHA-256 rank"
+  },
+  "test_policy": "official validation is sealed; no model evaluation in Stage 7A"
+}

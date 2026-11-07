@@ -1,0 +1,24 @@
+{
+  "dataset_id": "allenai/qasc",
+  "dataset_revision": "a34ba204eb9a33b919c10cc08f4f1c8dae5ec070",
+  "files": {
+    "test": {
+      "bytes": 158241,
+      "filename": "data/test-00000-of-00001.parquet",
+      "rows": 920,
+      "sha256": "495cfbd17abc1720b54785cdce68825104aaf60d7b8bdb2acac62157a31eb517"
+    },
+    "train": {
+      "bytes": 1967904,
+      "filename": "data/train-00000-of-00001.parquet",
+      "rows": 8134,
+      "sha256": "b9a297b5ab55f1605c7682ffbb7042c26d7ecb9ff1e1aa5a820d4e791c8302d1"
+    },
+    "validation": {
+      "bytes": 223553,
+      "filename": "data/validation-00000-of-00001.parquet",
+      "rows": 926,
+      "sha256": "d1ae34ae13c5fce2c55305372c203c6cdb789728d0d7e5ea2956d55bc33f40ae"
+    }
+  }
+}

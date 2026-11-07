@@ -1,6 +1,6 @@
 # Hidden Messages Between Diffusion Language Model Agents
 
-Anonymous supplementary material for the paper
+Code and supplementary material for the paper
 “Hidden Messages Between Diffusion Language Model Agents: Causal Evidence for Latent
 Communication.”
 
@@ -39,6 +39,12 @@ models; download the corresponding base backbones separately.
 
 ## Reproducing paper values
 
+To rerun Dream-7B with the released QASC checkpoint, start with the
+[QASC inference-only reproduction guide](docs/QASC_REPRODUCTION.md).
+It includes the original evaluation configuration, exact development inputs, missing helper
+modules, and a driver that compares every predicted label with the published predictions.
+The driver can also save sender states and messages at each exchange without retraining.
+
 From the archive root, generate the LaTeX result macros and table with:
 
 ```bash
@@ -56,6 +62,7 @@ configurations in `configs/`, and a CUDA environment with the package versions i
 
 ## Data and model access
 
-The Tiny-A2D and Dream model weights and QASC source data are not redistributed. Their identifiers,
-revisions, row counts, and content hashes are recorded in the configurations and evidence. See
-`LICENSES.md` for attribution and license information.
+The Tiny-A2D and Dream base-model weights are not redistributed. The exact derived QASC
+development split is included in `data/qasc/validation.jsonl` under CC BY 4.0, with attribution
+and the original construction metadata. Other QASC splits can be reconstructed from the pinned
+source. See [LICENSES.md](LICENSES.md) and the reproduction guide.
